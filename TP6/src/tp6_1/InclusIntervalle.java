@@ -1,5 +1,7 @@
 package tp6_1;
 
+import tp6_2.Exceptions.ExceptionArgumentIncorrect;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Seb
@@ -7,12 +9,15 @@ package tp6_1;
  * Time: 21:16
  * To change this template use File | Settings | File Templates.
  */
-public class InclusIntervalle implements Condition{
+public class InclusIntervalle implements Condition {
 
     private int inf;
     private int sup;
 
-    public InclusIntervalle(int inf, int sup) {
+    public InclusIntervalle(int inf, int sup) throws ExceptionArgumentIncorrect {
+        if (inf >= sup)
+            throw new ExceptionArgumentIncorrect(inf + ">=" + sup);
+
         this.inf = inf;
         this.sup = sup;
     }
@@ -46,11 +51,10 @@ public class InclusIntervalle implements Condition{
                 inf + "," + sup + ")";
     }
 
-    public boolean isInclude(int i)
-    {
+    public boolean isInclude(int i) {
         if (i >= inf)
             if (i < sup)
                 return true;
-         return false;
+        return false;
     }
 }
