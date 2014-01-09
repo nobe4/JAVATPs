@@ -8,16 +8,15 @@ import java.util.HashMap;
 public class Ex1 {
     public static void main(String[] args) {
         HashMap<String, Animal> liste = new HashMap<String, Animal>();
-        liste.put("Alice", new Animal("edith","singe"));
-        liste.put("Bob", new Animal("izard","chamoix"));
-        liste.put("June", new Animal("gold","poisson"));
+        liste.put("Alice", new Animal("edith", "singe"));
+        liste.put("Bob", new Animal("izard", "chamoix"));
+        liste.put("June", new Animal("gold", "poisson"));
 
         System.out.println(liste.get(args[0]).toString());
     }
 
-    public static class Animal{
+    public static class Animal {
         String name, type;
-
 
 
         public Animal(String name, String type) {
